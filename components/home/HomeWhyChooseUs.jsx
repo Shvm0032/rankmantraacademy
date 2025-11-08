@@ -1,13 +1,13 @@
 import React from "react";
-import { BookOpen, Briefcase, HandCoins, SquareUserRound } from "lucide-react"; 
+import { BookOpen, Briefcase, HandCoins, SquareUserRound } from "lucide-react";
 const HomeWhyChooseUs = () => {
     return (
-        <section className="bg-[#fff9f6] py-16">
+        <section className="bg-[#fff9f6] py-8  md:py-16">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 {/* Heading */}
                 <div className="text-center mb-10">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-3">
-                        Why <span className="text-[#D83030]">Choose Us</span>
+                        Why Choose Us
                     </h2>
                     <div className="w-24 h-[3px] bg-[#D83030] mx-auto"></div>
                 </div>

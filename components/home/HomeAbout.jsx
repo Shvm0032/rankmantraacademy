@@ -4,7 +4,7 @@ import aboutImg from "@/public/home/homeAboutsectionImage.webp";
 
 const HomeAbout = () => {
     return (
-        <section className="bg-[#fff9f6] py-16">
+        <section className="bg-[#fff9f6] py-8 px-4 md:py-16">
             <div className="flex items-center justify-center flex-col">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4">
                     About RankMantra Academy

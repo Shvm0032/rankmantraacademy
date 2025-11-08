@@ -4,7 +4,7 @@ import img from "@/public/home/heroHome.webp";
 
 export default function HeroHome() {
     return (
-        <section className="w-full bg-white  overflow-hidden">
+        <section className="w-full bg-white  overflow-hidden py-8 md:py-0">
             <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12 gap-10">
 
                 {/* LEFT SIDE CONTENT */}
@@ -30,7 +30,7 @@ export default function HeroHome() {
                     <Image
                         src={img}
                         alt="Digital Marketing Students"
-                        className="object-contain md:object-cover w-full  top-2 mt-14 inset-0 "
+                        className="object-contain md:object-cover w-full  top-2 md:mt-14 inset-0 "
                         priority
                     />
                 </div>
