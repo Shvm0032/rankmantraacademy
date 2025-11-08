@@ -19,6 +19,10 @@
   }
 }
 
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -37,4 +41,10 @@ body {
   display: inline-block;
   white-space: nowrap;
   animation: marquee 18s linear infinite;
+}
+
+
+.BackgroundDesign {
+  z-index: 1;
+  clip-path: polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
 }
