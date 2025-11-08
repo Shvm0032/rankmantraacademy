@@ -5,7 +5,6 @@ import HomeCourses from "@/components/home/HomeCourses";
 import HomeWhyChooseUs from "@/components/home/HomeWhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 
-
 export default function HomePage() {
   return (
     <>
