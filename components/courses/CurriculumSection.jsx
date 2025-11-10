@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const CurriculumSection = () => {
+const CurriculumSection = ({ data }) => {
   // 🎯 All content in one const object
   const curriculumData = [
     {
@@ -62,12 +62,84 @@ const CurriculumSection = () => {
           Experience a <span className="text-red-600">top-tier curriculum</span>
         </h2>
 
-        {/* Accordion Section */}
+
         <div className="space-y-4">
-          {curriculumData.map((item, index) => (
+          {data?.Experience?.map((item, index) => (
             <details
               key={index}
-              open={index === 0}
+              className="border rounded-lg overflow-hidden"
+            >
+              <summary className="cursor-pointer bg-gray-100 px-5 py-3 font-semibold">
+                {item?.heading}
+              </summary>
+              <div className="p-5 bg-white">
+                <h3 className="text-lg font-bold mb-2">{item?.heading}</h3>
+                {
+                  data?.heroList ? (
+                    <>
+                      {
+                        data?.heroList?.map((items, i) => (
+                          <p className="text-gray-600 mb-4">{items}</p>
+                        ))
+                      }
+                    </>
+                  ) : null
+                }
+                <p className="text-gray-600 mb-4">{item?.description}</p>
+
+                <div className="mb-4">
+                  {item?.Topics && (
+                    <>
+                      <h4 className="font-semibold mb-2">Topics Covered:</h4>
+                      <ul className="list-disc list-inside text-gray-700 space-y-1">
+                        {item.Topics.map((topic, i) => (
+                          <li key={i}>{topic}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+
+                </div>
+
+                <div>
+                  {item?.skills ? (
+                    <>
+                      <h4 className="font-semibold mb-2">Skills Acquired:</h4>
+                      <ul className="list-disc list-inside text-gray-700 space-y-1">
+                        {item.skills.map((skill, i) => (
+                          <li key={i}>{skill}</li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    null
+                  )}
+
+
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* //////////////////////////////////////////// testing ///////////////////////////////////////////////////////// */}
+
+        {/* <div className="space-y-4">
+          {data?.Experience?.map((item, index) => (
+            <details
+              key={index}
               className="border rounded-lg overflow-hidden"
             >
               <summary className="cursor-pointer bg-gray-100 px-5 py-3 font-semibold">
@@ -80,7 +152,7 @@ const CurriculumSection = () => {
                 <div className="mb-4">
                   <h4 className="font-semibold mb-2">Topics Covered:</h4>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    {item.topics.map((topic, i) => (
+                    {item?.Topics.map((topic, i) => (
                       <li key={i}>{topic}</li>
                     ))}
                   </ul>
@@ -89,7 +161,7 @@ const CurriculumSection = () => {
                 <div>
                   <h4 className="font-semibold mb-2">Skills Acquired:</h4>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    {item.skills.map((skill, i) => (
+                    {item?.skills.map((skill, i) => (
                       <li key={i}>{skill}</li>
                     ))}
                   </ul>
@@ -97,7 +169,7 @@ const CurriculumSection = () => {
               </div>
             </details>
           ))}
-        </div>
+        </div> */}
 
         {/* Download Button */}
         <div className="text-center mt-8">

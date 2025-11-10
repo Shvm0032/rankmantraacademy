@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseFeesSection = () => {
+const CourseFeesSection = ({ data }) => {
   return (
     <section className="py-8 md:py-16 bg-white">
       <div className="max-w-5xl mx-auto px-6">
@@ -22,10 +22,10 @@ const CourseFeesSection = () => {
           {/* Left Side */}
           <div className="bg-gray-100 rounded-lg px-4 py-4   md:w-1/2">
             <p className="text-sm text-gray-500 ">Starting at</p>
-            <h3 className="text-3xl font-bold text-[#D83030]">
-              ₹ 333 <span className="text-lg text-gray-700 font-semibold">per day</span>
+            <h3 className="text-3xl font-bold text-[#000000]">
+              ₹ {data?.cost?.price}
             </h3>
-            <p className="text-gray-600  text-sm font-medium">Total ₹ 9,999</p>
+            <p className="text-gray-600  text-sm font-medium">Total ₹ {data?.courseFee}</p>
           </div>
 
           {/* Right Side */}
@@ -34,22 +34,14 @@ const CourseFeesSection = () => {
               What you'll get:
             </h4>
             <ul className="space-y-1 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-[#D83030] text-xl mr-2">✔</span>
-                Learn core digital marketing skills in 45 days
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#D83030] text-xl mr-2">✔</span>
-                Hands-on training with real projects
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#D83030] text-xl mr-2">✔</span>
-                Practical exposure to SEO, SMM, SEM & more
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#D83030] text-xl mr-2">✔</span>
-                Certificate on course completion
-              </li>
+              {
+                data?.cost?.list?.map((item, i) => (
+                  <li className="flex items-start">
+                    <span className="text-[#D83030] text-xl mr-2">✔</span>
+                    {item}
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>

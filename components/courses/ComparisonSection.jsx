@@ -10,46 +10,8 @@ import {
   ThumbsUp,
 } from "lucide-react";
 
-const ComparisonSection = () => {
-  // 📊 Data stored in one constant
-  const comparisonData = [
-    {
-      icon: <Award className="w-5 h-5 text-gray-700" />,
-      title: "Institutional Prestige",
-      rankmantra: "Backed by industry experts",
-      others: "Recognised but less credible",
-    },
-    {
-      icon: <BookOpen className="w-5 h-5 text-gray-700" />,
-      title: "Curriculum",
-      rankmantra: "Covers SEO, SMM, SEM, Content & Analytics",
-      others: "Mostly basics, limited practical",
-    },
-    {
-      icon: <Briefcase className="w-5 h-5 text-gray-700" />,
-      title: "Hands-on Projects",
-      rankmantra: "6+ live projects & case studies",
-      others: "Few projects, less real-world exposure",
-    },
-    {
-      icon: <Users className="w-5 h-5 text-gray-700" />,
-      title: "Recruitment & Outcomes",
-      rankmantra: "Job & freelance opportunities",
-      others: "Limited placement support",
-    },
-    {
-      icon: <FileBadge className="w-5 h-5 text-gray-700" />,
-      title: "Program credentials",
-      rankmantra: "Recognized certificate",
-      others: "Few or generic certificates",
-    },
-    {
-      icon: <Layers className="w-5 h-5 text-gray-700" />,
-      title: "Specialisations",
-      rankmantra: "Multiple marketing options",
-      others: "Very few or none",
-    },
-  ];
+const ComparisonSection = ({data}) => {
+ 
 
   return (
     <section className="bg-white py-16">
@@ -70,7 +32,7 @@ const ComparisonSection = () => {
         </div>
 
         {/* Data Rows */}
-        {comparisonData.map((item, index) => (
+        {data?.comparison?.map((item, index) => (
           <div
             key={index}
             className={`grid grid-cols-3 items-center py-4 px-4 ${
@@ -79,20 +41,20 @@ const ComparisonSection = () => {
           >
             {/* Title + Icon */}
             <div className="flex items-center gap-2 font-semibold text-gray-800">
-              {item.icon}
-              {item.title}
+              {item?.icon}
+              {item?.title}
             </div>
 
             {/* Rankmantra Column */}
             <div className=" flex  gap-2 items-center text-gray-700">
               <ThumbsUp className="text-green-500 w-4 h-4 mb-1" />
-              <span>{item.rankmantra}</span>
+              <span>{item?.rankmantra}</span>
             </div>
 
             {/* Other Institutes Column */}
             <div className=" flex  gap-2 items-center text-gray-500">
               <ThumbsUp className="text-gray-300 w-4 h-4 mb-1" />
-              <span>{item.others}</span>
+              <span>{item?.others}</span>
             </div>
           </div>
         ))}

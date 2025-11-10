@@ -3,7 +3,8 @@ import { useState } from "react";
 import { CheckCircle, Star } from "lucide-react";
 import course1 from "@/public/home/course1.webp"
 
-export default function CoursesHero() {
+export default function CoursesHero({ data }) {
+
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -21,11 +22,12 @@ export default function CoursesHero() {
 
     return (
         <section className="relative w-full overflow-hidden bg-[#111] text-white">
-            {/* Background image + dark overlay */}
             <div
-                className="absolute inset-0 bg-[url('@/public/home/course1.webp')] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url('${data?.mainImage}')` }}
                 aria-hidden="true"
             />
+
             <div className="absolute inset-0 bg-black/70" />
 
             {/* Content */}
@@ -34,22 +36,24 @@ export default function CoursesHero() {
                 {/* LEFT SIDE - Course Details */}
                 <div className="md:w-[60%]">
                     <div className="inline-block bg-white/40 text-white px-5 py-2 rounded-full mb-6 text-sm tracking-wide">
-                        Basic Digital Marketing Course for Beginners
+                        {data?.heading}
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-extrabold mb-2 leading-tight">
-                        Basic Digital Marketing Course
+                        {data?.heading}
                     </h1>
 
                     <ul className="space-y-2 mb-4 text-lg text-gray-200">
-                        <li className="flex items-start gap-3">
-                            <CheckCircle className="text-[#ffffff] w-6 h-6 mt-1 " />
-                            Learn from Industry Experts with real-world experience
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <CheckCircle className="text-[#ffffff] w-6 h-6 mt-1 " />
-                            Hands-on Training with live projects
-                        </li>
+                        {
+                            data?.heroList?.map((item, i) => (
+                                <li className="flex items-start gap-3" key={i}>
+                                    <CheckCircle className="text-[#ffffff] w-6 h-6 mt-1 " />
+                                    {item}
+                                </li>
+                            ))
+                        }
+
+
                     </ul>
 
                     <div className="md:flex items-center gap-3 justify-between">
@@ -61,7 +65,7 @@ export default function CoursesHero() {
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <p className="text-gray-200">Join 15k+ Digital Achievers</p>
+                            <p className="text-gray-200">{data?.join}</p>
                         </div>
 
                         <div className="flex items-center gap-2 mb-8">
@@ -74,12 +78,12 @@ export default function CoursesHero() {
                     <div className="flex flex-wrap justify-between gap-6 bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-full">
                         <div className="w-[45%]">
                             <p className="text-base text-gray-300">Course Fee</p>
-                            <p className="text-3xl font-bold text-white mt-1">₹ 9,999</p>
+                            <p className="text-3xl font-bold text-white mt-1">₹ {data?.courseFee}</p>
                         </div>
-                        <div className="w-px h-12 bg-white/20 hidden md:block"  />
+                        <div className="w-px h-12 bg-white/20 hidden md:block" />
                         <div className="w-[45%]">
                             <p className="text-base text-gray-300">Duration</p>
-                            <p className="text-3xl font-bold text-white mt-1">30 Days</p>
+                            <p className="text-3xl font-bold text-white mt-1">{data?.duration} Days</p>
                         </div>
                     </div>
                 </div>
