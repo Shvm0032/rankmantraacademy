@@ -54,7 +54,7 @@ export default function Header() {
                 {link.dropdown ? (
                   <>
                     <button
-                      className="flex items-center gap-1 text-black hover:text-[#D83030] font-[500] text-md"
+                      className="flex items-center gap-1 text-black hover:text-[#D83030]  text-md"
                       onClick={() => setShowCourses((prev) => !prev)}
                     >
                       {link.name}
@@ -82,7 +82,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="text-black hover:text-[#D83030] font-[500] text-md"
+                    className="text-black hover:text-[#D83030]  text-md"
                   >
                     {link.name}
                   </Link>
@@ -154,7 +154,7 @@ export default function Header() {
                 <>
                   <button
                     onClick={() => setShowCourses(!showCourses)}
-                    className="flex justify-between items-center w-full text-left text-black font-[500]"
+                    className="flex justify-between items-center w-full text-left text-black "
                   >
                     {link.name}
                     <ChevronDown
@@ -183,8 +183,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-black hover:text-[#D83030] font-[500]"
-                >
+                  className="text-black hover:text-[#D83030] ">
                   {link.name}
                 </Link>
               )}
