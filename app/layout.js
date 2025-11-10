@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "My Website",
+  title: "Rankmantra Academy",
   description: "This is a sample layout with header and footer",
 };
 

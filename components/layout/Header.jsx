@@ -37,7 +37,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full shadow-md z-40 relative">
+    <header className="w-full bg-[#FFFFFF] shadow-md z-40 relative">
       <TopBar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
