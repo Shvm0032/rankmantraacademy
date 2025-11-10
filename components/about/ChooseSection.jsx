@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
-
 export default function ChooseSection({
   imageSrc = "/about/maria.webp",
   alt = "Illustration",
@@ -14,7 +12,6 @@ export default function ChooseSection({
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-stretch gap-6">
 
-          {/* ✅ LEFT DIV - Image full visible */}
           <div className="md:w-1/2 w-full bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
             <Image
               src={imageSrc}
