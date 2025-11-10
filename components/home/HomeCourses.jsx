@@ -54,7 +54,6 @@ const HomeCourses = () => {
                             key={index}
                             className="bg-white p-2 shadow-md rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl"
                         >
-                            {/* Top Image Section */}
                             <div className="relative  rounded-lg overflow-hidden">
                                 <Image
                                     src={course.img}
@@ -62,11 +61,9 @@ const HomeCourses = () => {
                                     className="w-full h-[250px] rounded-lg object-cover transform transition-transform duration-500 hover:scale-110"
                                 />
 
-                                {/* Overlay Text */}
 
                             </div>
 
-                            {/* Bottom Text */}
                             <div className="p-6 text-center">
                                 <h4 className="text-2xl font-extrabold text-black mb-2">
                                     {course.title}
