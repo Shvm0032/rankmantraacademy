@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   MapPin,
   Phone,
@@ -42,7 +43,7 @@ export default function Footer() {
             courses, hands-on training, and real-world insights. Your journey to
             success starts here!
           </p>
-          <button className="bg-[#D83030] cursor-pointer hover:bg-[#a42222] text-white px-8 py-3 rounded-md  text-base">
+          <button className="bg-[#D83030] cursor-pointer hover:bg-[#a42222] text-white px-8 py-3 rounded-md text-base">
             DISCOVER MORE
           </button>
         </div>
@@ -52,29 +53,29 @@ export default function Footer() {
           <h3 className="text-2xl font-semibold mb-6">Useful Links</h3>
           <ul className="space-y-4 text-lg">
             <li>
-              <a href="/" className="hover:text-[#D83030] transition">
+              <Link href="/" className="hover:text-[#D83030] transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-[#D83030] transition">
+              <Link href="/about" className="hover:text-[#D83030] transition">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/courses" className="hover:text-[#D83030] transition">
+              <Link href="/courses" className="hover:text-[#D83030] transition">
                 Courses
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-[#D83030] transition">
+              <Link href="/contact" className="hover:text-[#D83030] transition">
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/reviews" className="hover:text-[#D83030] transition">
+              <Link href="/reviews" className="hover:text-[#D83030] transition">
                 Student Review
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -83,9 +84,30 @@ export default function Footer() {
         <div>
           <h3 className="text-2xl font-semibold mb-6">Courses</h3>
           <ul className="space-y-4 text-lg">
-            <li>Basic Digital Marketing Course</li>
-            <li>Advance Digital Marketing Course</li>
-            <li>Performance Marketing Course</li>
+            <li>
+              <Link
+                href="/course/basic-digital-marketing-course"
+                className="hover:text-[#D83030] transition"
+              >
+                Basic Digital Marketing Course
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/course/advance-digital-marketing-course"
+                className="hover:text-[#D83030] transition"
+              >
+                Advance Digital Marketing Course
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/course/performance-marketing-course"
+                className="hover:text-[#D83030] transition"
+              >
+                Performance Marketing Course
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -94,10 +116,7 @@ export default function Footer() {
           <h3 className="text-2xl font-semibold mb-6">Contact Info</h3>
           <ul className="space-y-4 text-lg">
             <li className="flex items-center gap-3">
-              <p>
-                {" "}
-                <MapPin className="text-[#D83030] w-6 h-6" />{" "}
-              </p>
+              <MapPin className="text-[#D83030] w-6 h-6" />
               2nd Floor, Shyam Tower, Sewla Kalan, Shimla Bypass Road,
               Pithuwala, Dehradun - 248171
             </li>
@@ -129,39 +148,39 @@ export default function Footer() {
 
         {/* Social Icons */}
         <div className="flex gap-4">
-          <a
+          <Link
             target="_blank"
             href="https://www.facebook.com/people/Rankmantra-Academy/61569894464580/?mibextid=wwXIfr&rdid=6HDrxffwKZ1mzDq5&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A5CYMyxhB%2F%3Fmibextid%3DwwXIfr"
             className="bg-[#D83030] hover:bg-[#D83030] p-3 rounded-md transition"
           >
             <Facebook size={20} />
-          </a>
-          <a
+          </Link>
+          <Link
             target="_blank"
             href="https://www.linkedin.com/company/rankmantra-academy/"
             className="bg-[#D83030] hover:bg-[#D83030] p-3 rounded-md transition"
           >
             <Linkedin size={20} />
-          </a>
-          <a
+          </Link>
+          <Link
             target="_blank"
             href="https://www.instagram.com/rankmantraacademy/"
             className="bg-[#D83030] hover:bg-[#D83030] p-3 rounded-md transition"
           >
             <Instagram size={20} />
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Floating WhatsApp & Scroll Top */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50 ">
-        <a
+        <Link
           href="https://wa.me/917055586161"
           target="_blank"
           className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition"
         >
           <MessageCircle size={24} />
-        </a>
+        </Link>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="bg-[#D83030] hover:bg-[#D83030] text-white p-4 rounded-full shadow-lg transition"
