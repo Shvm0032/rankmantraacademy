@@ -13,26 +13,32 @@ const data = [
         duration: "30",
         keyFeature: [
             {
+                icon: <Award className="w-10 h-10 " />,
                 heading: "Esteemed Credentials",
                 description: "Get a recognized Digital Marketing Certificate after completing the course, valid for jobs & freelancing."
             },
             {
+                icon: <Handshake className="w-10 h-10 " />,
                 heading: "Hands-on Training",
                 description: "Work on live projects & practical assignments to gain real-world experience."
             },
             {
+                icon: <GraduationCap className="w-10 h-10 " />,
                 heading: "Beginner-Friendly Curriculum",
                 description: "No prior experience needed – we start from scratch and make you job-ready."
             },
             {
+                icon: <BookOpen className="w-10 h-10 " />,
                 heading: "Expert Faculty",
                 description: "Learn directly from industry professionals with years of digital marketing experience."
             },
             {
+                icon: <Wallet className="w-10 h-10 " />,
                 heading: "Affordable Learning",
                 description: "Get quality training at an affordable fee with flexible payment options."
             },
             {
+                icon: <BarChart3 className="w-10 h-10 " />,
                 heading: "Career Growth Support",
                 description: "Get guidance for freelancing, job opportunities, and building your online career."
             },
@@ -338,26 +344,32 @@ const data = [
         duration: "45",
         keyFeature: [
             {
+                icon: <Award className="w-10 h-10 " />,
                 heading: "Recognized Certification",
                 description: "Earn a certificate in Performance Marketing, valid for jobs & freelancing."
             },
             {
+                icon: <Handshake className="w-10 h-10 " />,
                 heading: "Hands-on Training",
                 description: "Work on live ad campaigns & practical projects."
             },
             {
+                icon: <GraduationCap className="w-10 h-10 " />,
                 heading: "Beginner-Friendly Curriculum",
                 description: "No prior experience required; start from scratch."
             },
             {
+                icon: <BookOpen className="w-10 h-10 " />,
                 heading: "Expert Faculty",
                 description: "Learn from industry professionals with real campaign experience."
             },
             {
+                icon: <Wallet className="w-10 h-10 " />,
                 heading: "Affordable Learning",
                 description: "Quality training at ₹25,000 with easy payment options."
             },
             {
+                icon: <BarChart3 className="w-10 h-10 " />,
                 heading: "Career Growth Support",
                 description: "Guidance for jobs, freelancing, and career growth in performance marketing."
             },

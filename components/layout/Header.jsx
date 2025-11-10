@@ -27,9 +27,9 @@ export default function Header() {
     {
       name: "COURSES",
       dropdown: [
-        { name: "Yoga", href: "/courses/yoga" },
-        { name: "Pilates", href: "/courses/pilates" },
-        { name: "Rehab", href: "/courses/rehab" },
+        { name: "Basic Digital Marketing Course", href: "/course/basic-digital-marketing-course" },
+        { name: "Advance Digital Marketing Course", href: "/course/advance-digital-marketing-course" },
+        { name: "Performance Marketing Course", href: "/course/performance-marketing-course" },
       ],
     },
     // { name: "BLOG", href: "/blog" },
@@ -67,12 +67,12 @@ export default function Header() {
                     </button>
 
                     {/* Dropdown */}
-                    <ul className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-40">
+                    <ul className="absolute left-0 top-[15px] hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-[300px]">
                       {link.dropdown.map((item) => (
                         <li key={item.name}>
                           <Link
                             href={item.href}
-                            className="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                            className="block px-4 py-2 mt-3 hover:bg-gray-100 text-lg text-gray-700"
                           >
                             {item.name}
                           </Link>
