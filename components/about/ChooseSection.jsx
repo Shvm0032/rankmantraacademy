@@ -34,17 +34,16 @@ export default function ChooseSection({
               {heading}
             </h2>
 
-            {/* Animated curves */}
-            <div className="mt-4 mb-4 overflow-hidden h-12 relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="min-w-full animate-slide">
-                  <CurvesSVG />
-                </div>
-                <div className="min-w-full animate-slide">
-                  <CurvesSVG />
-                </div>
-              </div>
-            </div>
+     {/* Animated curves */}
+<div className="mt-4 mb-4 overflow-hidden h-12 relative">
+  <div className="absolute inset-0 flex items-center">
+    <div className="min-w-[10%] flex animate-slide">
+      <CurvesSVG />
+      <CurvesSVG /> 
+    </div>
+  </div>
+</div>
+
 
             {/* ✅ Normal paragraph without array */}
             <div className="mt-2 space-y-3">

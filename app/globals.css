@@ -43,3 +43,24 @@ body {
   z-index: 1;
   clip-path: polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+
+/* animation curver css  */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  display: flex;
+  animation: slide 8s linear infinite;
+}
+
+.wave-path {
+  width: 200px;
+  height: 20px;
+}
