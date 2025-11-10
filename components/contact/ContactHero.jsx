@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function ContactHero() {
   return (
-    <section
-      className="w-full h-[40vh] md:h-[70vh] bg-content bg-right bg-no-repeat flex flex-col items-center justify-center px-4 text-white"
+       <section
+      className="w-full h-[48vh] md:h-[55vh] bg-content bg-right bg-no-repeat flex flex-col items-center justify-center px-4 text-white"
       style={{ backgroundImage: "url('/about/inrrers.webp')" }} 
     >
       {/* Heading */}
