@@ -27,7 +27,7 @@ const Page = () => {
 
 
   return (
-    <>
+    <div className="bg-white">
       <CoursesHero data={courseData} />
 
       <div className="md:flex items-start justify-between gap-5 relative max-w-7xl mx-auto py-4 md:py-16">
@@ -45,7 +45,7 @@ const Page = () => {
           <RightSideSummery data={courseData} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
