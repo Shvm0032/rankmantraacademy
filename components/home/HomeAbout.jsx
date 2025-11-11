@@ -1,8 +1,10 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import aboutImg from "@/public/home/homeAboutsectionImage.webp";
-
-const HomeAbout = () => {
+import { useRouter } from "next/navigation";
+const HomeAbout = () => {   
+    const router = useRouter()
     return (
         <section className="bg-[#fff9f6] py-8 px-4 md:py-16">
             <div className="flex items-center justify-center flex-col">
@@ -48,7 +50,9 @@ const HomeAbout = () => {
                         your goals.
                     </p>
 
-                    <button className="bg-[#D83030] cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-[#D83030] transition duration-300">
+                    <button
+                    onClick={() => router.push("/about")}
+                     className="bg-[#D83030] cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-[#D83030] transition duration-300">
                         Learn More
                     </button>
                 </div>

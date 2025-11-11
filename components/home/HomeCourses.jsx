@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 
@@ -5,6 +6,7 @@ import course1 from "@/public/home/course1.webp";
 import course2 from "@/public/home/course2.webp";
 import course3 from "@/public/home/course3.webp";
 import Link from "next/link";
+
 
 const courses = [
     {
@@ -73,6 +75,7 @@ const HomeCourses = () => {
                                 </p>
                                 <Link 
                                 href={course.slug}
+                               
                                 className="bg-[#D83030] cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b82929] transition duration-300">
                                     Learn More
                                 </Link>

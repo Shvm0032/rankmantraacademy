@@ -1,6 +1,9 @@
+"use client"
 import React from "react";
 import { BookOpen, Briefcase, HandCoins, SquareUserRound } from "lucide-react";
+import { useRouter } from "next/navigation";
 const HomeWhyChooseUs = () => {
+    const route = useRouter()
     return (
         <section className="bg-[#fff9f6] py-8  md:py-16">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -40,7 +43,9 @@ const HomeWhyChooseUs = () => {
                             their goals.
                         </p>
 
-                        <button className="bg-[#D83030] cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b82929] transition duration-300">
+                        <button 
+                        onClick={() => route.push("/course/basic-digital-marketing-course")}
+                        className="bg-[#D83030] cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b82929] transition duration-300">
                             Explore Our Courses
                         </button>
                     </div>

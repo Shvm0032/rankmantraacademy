@@ -1,10 +1,16 @@
 "use client";
 import Image from "next/image";
 import img from "@/public/home/heroHome.webp";
+import PopupForm from "../layout/PopupForm";
+import { useState } from "react";
 
 export default function HeroHome() {
+    const [showPopUp, setShowPopUp] = useState(false)
     return (
         <section className="w-full bg-white  overflow-hidden py-8 md:py-0">
+            {
+                showPopUp ? <PopupForm onClose={() => setShowPopUp(false)} /> : null
+            }
             <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12 gap-10">
 
                 {/* LEFT SIDE CONTENT */}
@@ -19,7 +25,9 @@ export default function HeroHome() {
                         career with confidence!
                     </p>
 
-                    <button className="bg-white text-black border-2 border-black cursor-pointer hover:border-[#D83030] rounded-full px-8 py-3 font-medium hover:bg-[#D83030] hover:text-white transition-all">
+                    <button
+                    onClick={() => setShowPopUp(true)}
+                     className="bg-white text-black border-2 border-black cursor-pointer hover:border-[#D83030] rounded-full px-8 py-3 font-medium hover:bg-[#D83030] hover:text-white transition-all">
                         Enroll Now
                     </button>
                 </div>
