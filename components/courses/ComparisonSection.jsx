@@ -16,10 +16,10 @@ const ComparisonSection = ({data}) => {
   return (
     <section className="bg-white py-16">
       <div className="max-w-5xl mx-auto ">
-        <p className="text-gray-500 text-sm mb-2">
+        <p className="text-gray-500 text-lg font-semibold mb-2">
           Rankmantra Academy vs other institutes
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+        <h2 className="text-3xl text-black sm:text-4xl font-bold mb-8">
           Our Digital Marketing Course vs{" "}
           <span className="text-red-600">Other Institutes</span>
         </h2>
@@ -28,7 +28,7 @@ const ComparisonSection = ({data}) => {
         <div className="grid grid-cols-3 bg-gray-50 font-semibold text-lg py-3 px-4 border-b">
           <div></div>
           <div className="text-red-600 text-center">Rankmantra Academy</div>
-          <div className="text-center">Other Institutes</div>
+          <div className="text-center text-gray-600">Other Institutes</div>
         </div>
 
         {/* Data Rows */}

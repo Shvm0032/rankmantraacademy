@@ -57,8 +57,8 @@ const CurriculumSection = ({ data }) => {
   return (
     <section className="bg-white mt-10">
       <div className="max-w-3xl mx-auto ">
-        <p className="text-sm text-gray-500">Unlock Cheat Sheet Now?</p>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+        <p className="text-lg text-gray-600">Unlock Cheat Sheet Now?</p>
+        <h2 className="text-3xl sm:text-4xl text-black font-bold mb-6">
           Experience a <span className="text-red-600">top-tier curriculum</span>
         </h2>
 
@@ -79,7 +79,7 @@ const CurriculumSection = ({ data }) => {
                     <>
                       {
                         data?.heroList?.map((items, i) => (
-                          <p className="text-gray-600 mb-4">{items}</p>
+                          <p key={i} className="text-gray-600 mb-4">{items}</p>
                         ))
                       }
                     </>
