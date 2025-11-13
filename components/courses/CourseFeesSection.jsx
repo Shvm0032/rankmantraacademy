@@ -28,22 +28,21 @@ const CourseFeesSection = ({ data }) => {
             <p className="text-gray-600  text-sm font-medium">Total ₹ {data?.courseFee}</p>
           </div>
 
-          {/* Right Side */}
-          <div className="md:w-1/2">
-            <h4 className="text-lg font-semibold mb-1 text-gray-800">
-              What you'll get:
-            </h4>
-            <ul className="space-y-1 text-gray-700">
-              {
-                data?.cost?.list?.map((item, i) => (
-                  <li className="flex items-start">
-                    <span className="text-[#D83030] text-xl mr-2">✔</span>
-                    {item}
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+         {/* Right Side */}
+<div className="md:w-1/2">
+  <h4 className="text-lg font-semibold mb-1 text-gray-800">
+    What you'll get:
+  </h4>
+  <ul className="space-y-1 text-gray-700">
+    {data?.cost?.list?.map((item, i) => (
+      <li key={i} className="flex items-start">
+        <span className="text-[#D83030] text-xl mr-2">✔</span>
+        {item}
+      </li>
+    ))}
+  </ul>
+</div>
+
         </div>
       </div>
     </section>
