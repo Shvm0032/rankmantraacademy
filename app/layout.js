@@ -3,8 +3,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Rankmantra Academy",
-  description: "This is a sample layout with header and footer",
+  title: "Home - Rankmantra Academy",
+  description: "Join our industry-focused Digital Marketing course and learn SEO, Social Media, Google Ads, and more with hands-on projects. Build your career with confidence!",
 };
 
 export default function RootLayout({ children }) {
