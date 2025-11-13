@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { FaQuoteRight, FaStar } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const testimonials = [
+const testimonials1 = [
   {
     name: "Sneha Kapoor",
     role: "Content Marketing Student",
@@ -61,7 +61,7 @@ const Testimonials = () => {
             }}
             className="mySwiper"
           >
-            {testimonials.map((t, index) => (
+            {testimonials1.map((t, index) => (
               <SwiperSlide key={index}>
                 <div className="bg-white shadow-lg rounded-xl p-8 mx-3 h-full flex flex-col justify-between border border-gray-100 transition-all duration-300 hover:shadow-2xl">
                   <div className="flex justify-center mb-3 text-gray-500 text-3xl">

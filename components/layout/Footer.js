@@ -12,6 +12,7 @@ import {
   MessageCircle,
   ArrowUp,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import footerbg from "@/public/footer11.webp";
 
 export default function Footer() {
@@ -141,7 +142,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative border-t border-white/20 max-w-7xl mx-auto mt-10 py-6 px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="relative border-t border-white/20 max-w-6xl mx-auto mt-10 py-6 px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-base text-center md:text-left">
           Copyright © {year} Rankmantra Academy. All Rights Reserved.
         </p>
@@ -151,21 +152,21 @@ export default function Footer() {
           <Link
             target="_blank"
             href="https://www.facebook.com/people/Rankmantra-Academy/61569894464580/?mibextid=wwXIfr&rdid=6HDrxffwKZ1mzDq5&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A5CYMyxhB%2F%3Fmibextid%3DwwXIfr"
-            className="bg-[#D83030] hover:bg-[#D83030] p-3 rounded-md transition"
+            className="bg-[#D83030] hover:bg-[#D83030] p-2 rounded-md transition"
           >
             <Facebook size={20} />
           </Link>
           <Link
             target="_blank"
             href="https://www.linkedin.com/company/rankmantra-academy/"
-            className="bg-[#D83030] hover:bg-[#D83030] p-3 rounded-md transition"
+            className="bg-[#D83030] hover:bg-[#D83030] p-2 rounded-md transition"
           >
             <Linkedin size={20} />
           </Link>
           <Link
             target="_blank"
             href="https://www.instagram.com/rankmantraacademy/"
-            className="bg-[#D83030] hover:bg-[#D83030] p-3 rounded-md transition"
+            className="bg-[#D83030] hover:bg-[#D83030] p-2 rounded-md transition"
           >
             <Instagram size={20} />
           </Link>
@@ -177,13 +178,13 @@ export default function Footer() {
         <Link
           href="https://wa.me/917055586161"
           target="_blank"
-          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition"
+          className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition"
         >
-          <MessageCircle size={24} />
+          <FaWhatsapp size={25} />
         </Link>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="bg-[#D83030] hover:bg-[#D83030] text-white p-4 rounded-full shadow-lg transition"
+          className="bg-[#D83030] hover:bg-[#D83030] text-white p-2 rounded-full shadow-lg transition"
         >
           <ArrowUp size={22} />
         </button>
