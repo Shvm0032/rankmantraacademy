@@ -43,7 +43,7 @@ const CertificationsSection = () => {
                     <div className="space-y-8">
                         {certifications.map((item, index) => (
                             <div key={index} className="flex items-start gap-4">
-                                <div className="flex-shrink-0">{item.icon}</div>
+                                <div className="shrink-0">{item.icon}</div>
                                 <div>
                                     <h3 className="text-xl font-semibold mb-1">
                                         {item.title}
