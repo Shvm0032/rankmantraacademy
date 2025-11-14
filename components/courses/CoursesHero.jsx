@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import api from "@/utils/api";
 
 export default function CoursesHero({ data }) {
+  console.log(data)
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -47,7 +48,7 @@ export default function CoursesHero({ data }) {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${data?.mainImage}')` }}
+        style={{ backgroundImage: `url('${data?.thumbnail}')` }}
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-black/70" />
@@ -58,11 +59,11 @@ export default function CoursesHero({ data }) {
         {/* LEFT SIDE - Course Details */}
         <div className="md:w-[60%]">
           <div className="inline-block bg-white/40 text-white px-5 py-2 rounded-full mb-6 text-sm tracking-wide">
-            {data?.heading}
+            {data?.title}
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-2 leading-tight">
-            {data?.heading}
+            {data?.title}
           </h1>
 
           <ul className="space-y-2 mb-4 text-lg text-gray-200">
@@ -97,12 +98,12 @@ export default function CoursesHero({ data }) {
           <div className="flex flex-wrap justify-between gap-6 bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/10 w-full">
             <div className="w-[45%]">
               <p className="text-base text-gray-300">Course Fee</p>
-              <p className="text-3xl font-bold text-white mt-1">₹ {data?.courseFee}</p>
+              <p className="text-3xl font-bold text-white mt-1">₹ {data?.price}</p>
             </div>
             <div className="w-px h-12 bg-white/20 hidden md:block" />
             <div className="w-[45%]">
               <p className="text-base text-gray-300">Duration</p>
-              <p className="text-3xl font-bold text-white mt-1">{data?.duration} Days</p>
+              <p className="text-3xl font-bold text-white mt-1">{data?.duration}</p>
             </div>
           </div>
         </div>
