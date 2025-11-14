@@ -12,19 +12,40 @@ import CurriculumSection from "@/components/courses/CurriculumSection";
 import RightSideForm from "@/components/courses/RightSideForm";
 import RightSideSummery from "@/components/courses/RightSideSummery";
 import WayChooseUsSection from "@/components/courses/WayChooseUsSection";
-import data from "@/components/courses/CoursesData";
+
+import api from "@/utils/api";
+
+// 🟦 IMPORT YOUR FRONTEND JSON DATA
+import FrontendCourses from "@/components/courses/CoursesData";
 
 const Page = () => {
-  const { slug } = useParams(); 
+  const { slug } = useParams();
   const [courseData, setCourseData] = useState(null);
 
   useEffect(() => {
-    if (slug && data?.length) {
-      const matchedCourse = data.find((item) => item.slug === slug);
-      setCourseData(matchedCourse || null);
-    }
-  }, [slug]);
+    const loadData = async () => {
+      // STEP 1 → Find JSON (LOCAL) course by slug
+      const local = FrontendCourses.find((c) => c.slug === slug);
 
+      try {
+        // STEP 2 → Fetch backend course
+        const res = await api.get(`/courses/slug/${slug}`);
+        const backend = res.data.course;
+
+        // STEP 3 → MERGE BOTH (backend overrides frontend)
+        const merged = { ...local, ...backend };
+
+        setCourseData(merged);
+      } catch (error) {
+        console.log("Backend failed → using only frontend JSON");
+
+        // STEP 4 → If backend fails → use local only
+        setCourseData(local || null);
+      }
+    };
+
+    if (slug) loadData();
+  }, [slug]);
 
   return (
     <div className="bg-white">
@@ -32,7 +53,7 @@ const Page = () => {
 
       <div className="md:flex items-start justify-between gap-5 relative max-w-7xl mx-auto py-4 md:py-16">
         <div className="w-full md:w-[70%] px-6">
-          <WayChooseUsSection data={courseData} />
+          <WayChooseUsSection />
           <CurriculumSection data={courseData} />
           <ComparisonSection data={courseData} />
           <CertificationsSection data={courseData} />
