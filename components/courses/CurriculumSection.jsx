@@ -79,7 +79,6 @@ const CurriculumSection = ({ data }) => {
                     <>
                       {
                         data?.heroList?.map((items, i) => (
-                          
                           <p key={i} className="text-gray-600 mb-4">{items}</p>
                         ))
                       }
@@ -122,17 +121,6 @@ const CurriculumSection = ({ data }) => {
             </details>
           ))}
         </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
         {/* //////////////////////////////////////////// testing ///////////////////////////////////////////////////////// */}
