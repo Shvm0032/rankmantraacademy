@@ -117,7 +117,7 @@ export default function Footer() {
           <h3 className="text-2xl font-semibold mb-6">Contact Info</h3>
           <ul className="space-y-4 text-lg">
             <li className="flex items-center gap-3">
-              <MapPin className="text-[#D83030] w-6 h-6" />
+              <MapPin className="text-[#D83030] w-16 h-6" />
               2nd Floor, Shyam Tower, Sewla Kalan, Shimla Bypass Road,
               Pithuwala, Dehradun - 248171
             </li>
@@ -128,10 +128,6 @@ export default function Footer() {
             <li className="flex items-center gap-3">
               <Mail className="text-[#D83030] w-6 h-6" />
               info@rankmantraacademy.com
-            </li>
-            <li className="flex items-center gap-3">
-              <MessageCircle className="text-[#D83030] w-6 h-6" />
-              +91 7055586161 , +91 9557155778
             </li>
             <li className="flex items-center gap-3">
               <Clock className="text-[#D83030] w-6 h-6" />
