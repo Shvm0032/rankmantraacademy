@@ -25,9 +25,7 @@ const ProfileSettings = () => {
             <div>
               <h3 className="text-xl font-bold text-white">Admin User</h3>
               <p className="text-gray-300">info@rankmantraacademy.com</p>
-              <button className="text-[#D83030] hover:text-[#c02a2a] mt-2">
-                Change Avatar
-              </button>
+             
             </div>
           </div>
 
@@ -71,9 +69,7 @@ const ProfileSettings = () => {
             </div>
 
             <div className="pt-4">
-              <button className="bg-[#D83030] text-white px-6 py-2 rounded-lg hover:bg-[#c02a2a] transition-colors">
-                Update Profile
-              </button>
+             
             </div>
           </div>
         </div>
