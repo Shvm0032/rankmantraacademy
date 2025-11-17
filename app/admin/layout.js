@@ -3,7 +3,7 @@ export default function AdminLayout({ children }) {
     <div
       className="min-h-screen w-full bg-cover bg-center relative"
       style={{
-        backgroundImage: "url('/admin/logo-admin.png')",
+        backgroundImage: "url('/admin/bg-admin.png')",
       }}
     >
       {/* Overlay */}

@@ -27,14 +27,23 @@ export default function Header() {
     {
       name: "COURSES",
       dropdown: [
-        { name: "Basic Digital Marketing Course", href: "/course/basic-digital-marketing-course" },
-        { name: "Advance Digital Marketing Course", href: "/course/advance-digital-marketing-course" },
-        { name: "Performance Marketing Course", href: "/course/performance-marketing-course" },
+        {
+          name: "Basic Digital Marketing Course",
+          href: "/course/basic-digital-marketing-course",
+        },
+        {
+          name: "Advance Digital Marketing Course",
+          href: "/course/advance-digital-marketing-course",
+        },
+        {
+          name: "Performance Marketing Course",
+          href: "/course/performance-marketing-course",
+        },
       ],
     },
     // { name: "BLOG", href: "/blog" },
     { name: "CONTACT", href: "/contact" },
-    { name: "STUDENT REVIEWS", href: "/student-reviews" }
+    { name: "STUDENT REVIEWS", href: "/student-reviews" },
   ];
 
   return (
@@ -55,14 +64,15 @@ export default function Header() {
                 {link.dropdown ? (
                   <>
                     <button
-                      className="flex items-center gap-1 text-black hover:text-[#D83030]  font-medium"
+                      className="flex items-center gap-1 text-black hover:text-[#D83030] font-medium"
                       onClick={() => setShowCourses((prev) => !prev)}
                     >
                       {link.name}
                       <ChevronDown
                         size={16}
-                        className={`transition-transform duration-300 ${showCourses ? "rotate-180" : ""
-                          }`}
+                        className={`transition-transform duration-300 ${
+                          showCourses ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
 
@@ -90,6 +100,16 @@ export default function Header() {
                 )}
               </li>
             ))}
+
+            {/* Login Button Added Here */}
+            <li>
+              <Link
+                href="/student-panel"
+                className="px-5 py-2 bg-[#D83030] rounded-md border border-[#D83030] text-white font-medium hover:bg-[#D83030] hover:text-white transition-all duration-300"
+              >
+                Login
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -106,7 +126,8 @@ export default function Header() {
 
           <Link
             href="tel:+917055586161"
-            className="bg-[#1273eb] text-white px-5 py-3 rounded-full flex items-center justify-center">
+            className="bg-[#1273eb] text-white px-5 py-3 rounded-full flex items-center justify-center"
+          >
             Book a Demo Class
           </Link>
         </div>
@@ -115,7 +136,8 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-3">
           <Link
             href="tel:+917055586161"
-            className="bg-[#1273eb] text-white px-2 py-3 rounded-full w-full text-sm flex items-center justify-center">
+            className="bg-[#1273eb] text-white px-2 py-3 rounded-full w-full text-sm flex items-center justify-center"
+          >
             Book a Demo Class
           </Link>
           <button onClick={() => setMenuOpen(true)}>
@@ -132,8 +154,9 @@ export default function Header() {
 
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex justify-between items-center px-4 py-4 border-b">
           <Image src={logo} alt="Logo" width={70} height={70} />
@@ -160,8 +183,9 @@ export default function Header() {
                     {link.name}
                     <ChevronDown
                       size={16}
-                      className={`transition-transform ${showCourses ? "rotate-180" : ""
-                        }`}
+                      className={`transition-transform ${
+                        showCourses ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
                   {showCourses && (
@@ -191,8 +215,6 @@ export default function Header() {
               )}
             </li>
           ))}
-
-
         </ul>
       </div>
 
