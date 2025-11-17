@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Trash2 } from "lucide-react";
 import api from "@/utils/api";
+import ConfirmDeleteModal from "@/components/admin/ConfirmDeleteModal"; // <-- import modal
 
 const EmailManagement = () => {
   const [bookingEmails, setBookingEmails] = useState([]);
@@ -11,6 +12,10 @@ const EmailManagement = () => {
   const [loadingContacts, setLoadingContacts] = useState(false);
   const [deletingId, setDeletingId] = useState(null);
   const [error, setError] = useState(null);
+
+  // Modal States
+  const [showModal, setShowModal] = useState(false);
+  const [deleteTarget, setDeleteTarget] = useState({ type: null, id: null });
 
   // Fetch bookings
   const fetchBookings = async () => {
@@ -45,52 +50,61 @@ const EmailManagement = () => {
     fetchContacts();
   }, []);
 
-  // Delete booking handler
-  const handleDeleteBooking = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this booking?")) return;
+  // -------------------------
+  // Open Modal for delete
+  // -------------------------
+  const openDeleteModal = (type, id) => {
+    setDeleteTarget({ type, id });
+    setShowModal(true);
+  };
 
+  // -------------------------
+  // Confirm Delete
+  // -------------------------
+  const handleConfirmDelete = async () => {
+    const { type, id } = deleteTarget;
     setDeletingId(id);
+
     try {
-      await api.delete(`/booking/${id}`);
-      setBookingEmails((prev) => prev.filter((item) => item._id !== id));
+      if (type === "booking") {
+        await api.delete(`/booking/${id}`);
+        setBookingEmails((prev) => prev.filter((item) => item._id !== id));
+      } else if (type === "contact") {
+        await api.delete(`/contact/${id}`);
+        setContactEmails((prev) => prev.filter((item) => item._id !== id));
+      }
     } catch (err) {
       alert("Delete failed. Try again.");
       console.error(err);
     } finally {
       setDeletingId(null);
+      setShowModal(false);
     }
   };
 
-  // Delete contact handler
-  const handleDeleteContact = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this contact?")) return;
-
-    setDeletingId(id);
-    try {
-      await api.delete(`/contact/${id}`);
-      setContactEmails((prev) => prev.filter((item) => item._id !== id));
-    } catch (err) {
-      alert("Delete failed. Try again.");
-      console.error(err);
-    } finally {
-      setDeletingId(null);
-    }
-  };
-
-  // Stats counts
+  // Stats
   const totalEmails = bookingEmails.length + contactEmails.length;
-  const unreadEmails = 0; // Adjust if you track unread somewhere
+  const unreadEmails = 0;
   const bookingCount = bookingEmails.length;
   const contactCount = contactEmails.length;
 
   return (
     <div className="p-6 w-full">
+      {/* Delete Modal */}
+      <ConfirmDeleteModal
+        isOpen={showModal}
+        onCancel={() => setShowModal(false)}
+        onConfirm={handleConfirmDelete}
+      />
+
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-white">Email Management</h2>
       </div>
 
       {error && (
-        <div className="bg-red-600 p-3 rounded mb-4 text-white font-semibold">{error}</div>
+        <div className="bg-red-600 p-3 rounded mb-4 text-white font-semibold">
+          {error}
+        </div>
       )}
 
       {/* Stats */}
@@ -115,7 +129,7 @@ const EmailManagement = () => {
         </div>
       </div>
 
-      {/* Booking Form Table */}
+      {/* Booking Table */}
       <div className="bg-gray-800 rounded-lg p-6 w-full mb-8">
         <h3 className="text-xl font-bold text-white mb-4">Booking Form Emails</h3>
 
@@ -137,21 +151,18 @@ const EmailManagement = () => {
               </thead>
               <tbody>
                 {bookingEmails.map((item) => (
-                  <tr
-                    key={item._id}
-                    className="border-b border-gray-700 hover:bg-gray-700/50"
-                  >
+                  <tr key={item._id} className="border-b border-gray-700 hover:bg-gray-700/50">
                     <td className="p-3">{item.fullName}</td>
                     <td className="p-3">{item.phoneNumber}</td>
                     <td className="p-3">{item.selectedCourse}</td>
-                    <td className="p-3">{new Date(item.createdAt).toLocaleDateString()}</td>
+                    <td className="p-3">
+                      {new Date(item.createdAt).toLocaleDateString()}
+                    </td>
                     <td className="p-3 text-center">
                       <button
                         disabled={deletingId === item._id}
-                        onClick={() => handleDeleteBooking(item._id)}
+                        onClick={() => openDeleteModal("booking", item._id)}
                         className="text-red-500 hover:text-red-600 disabled:opacity-50 cursor-pointer"
-                        title="Delete Booking"
-                        aria-label={`Delete booking ${item.fullName}`}
                       >
                         <Trash2 size={20} />
                       </button>
@@ -164,7 +175,7 @@ const EmailManagement = () => {
         )}
       </div>
 
-      {/* Contact Us Table */}
+      {/* Contact Table */}
       <div className="bg-gray-800 rounded-lg p-6 w-full">
         <h3 className="text-xl font-bold text-white mb-4">Contact Us Emails</h3>
 
@@ -186,21 +197,18 @@ const EmailManagement = () => {
               </thead>
               <tbody>
                 {contactEmails.map((item) => (
-                  <tr
-                    key={item._id}
-                    className="border-b border-gray-700 hover:bg-gray-700/50"
-                  >
+                  <tr key={item._id} className="border-b border-gray-700 hover:bg-gray-700/50">
                     <td className="p-3">{item.name}</td>
                     <td className="p-3">{item.email}</td>
                     <td className="p-3">{item.message}</td>
-                    <td className="p-3">{new Date(item.createdAt).toLocaleDateString()}</td>
+                    <td className="p-3">
+                      {new Date(item.createdAt).toLocaleDateString()}
+                    </td>
                     <td className="p-3 text-center">
                       <button
                         disabled={deletingId === item._id}
-                        onClick={() => handleDeleteContact(item._id)}
+                        onClick={() => openDeleteModal("contact", item._id)}
                         className="text-red-500 hover:text-red-600 disabled:opacity-50 cursor-pointer"
-                        title="Delete Contact"
-                        aria-label={`Delete contact ${item.name}`}
                       >
                         <Trash2 size={20} />
                       </button>
