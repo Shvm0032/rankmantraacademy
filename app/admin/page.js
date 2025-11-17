@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -14,8 +15,9 @@ export default function AdminLogin() {
     if (email === "dnd@rankmantra.com" && password === "Priyansh@8748**") {
       document.cookie = "admin-auth=true; path=/; max-age=86400";
       window.location.href = "/admin/dashboard";
+      toast.success("Login successful!");
     } else {
-      alert("Invalid Email or Password");
+     toast.error("Invalid credentials!");
     }
   };
 

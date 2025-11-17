@@ -1,10 +1,10 @@
 import React from 'react';
 
-const StatsCards = () => {
+const StatsCards = ({ totalEmails }) => {
   const stats = [
     {
       title: "Total Emails",
-      value: "156",
+      value: totalEmails ?? "0", 
       change: "+12% from last month",
       gradient: "bg-gradient-to-r from-blue-600 to-blue-800",
       textColor: "text-blue-200",

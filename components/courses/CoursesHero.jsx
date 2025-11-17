@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import api from "@/utils/api";
 
 export default function CoursesHero({ data }) {
-  console.log(data)
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
