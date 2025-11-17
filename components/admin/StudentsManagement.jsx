@@ -51,7 +51,7 @@ const StudentsManagement = () => {
 
         <div className="bg-gray-900 rounded-lg p-6">
           <p className="text-gray-300 text-center py-8">
-            Students management content will be loaded from backend...
+           coming soon .....
           </p>
         </div>
       </div>

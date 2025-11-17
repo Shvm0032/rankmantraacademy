@@ -9,13 +9,14 @@ import { usePathname } from "next/navigation";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith("/admin");
+  const isStudentPanel = pathname.startsWith("/student-panel");
 
   return (
     <html lang="en">
       <body className="bg-gray-50 text-gray-900">
         
         {/* 👇 Admin me Header/Footer hide */}
-        {!isAdmin && <Header />}
+        {!isAdmin && !isStudentPanel && <Header />}
 
         <main className="min-h-screen">
           <Toaster
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
         </main>
 
         {/* 👇 Admin me Footer hide */}
-        {!isAdmin && <Footer />}
+        {!isAdmin && !isStudentPanel && <Footer />}
 
       </body>
     </html>
