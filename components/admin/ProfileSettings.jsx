@@ -37,6 +37,7 @@ const ProfileSettings = () => {
                   type="text"
                   className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#D83030]"
                   defaultValue="Rank"
+                  disabled
                 />
               </div>
               <div>
@@ -45,6 +46,7 @@ const ProfileSettings = () => {
                   type="text"
                   className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#D83030]"
                   defaultValue="Mantra"
+                  disabled
                 />
               </div>
             </div>
@@ -55,6 +57,7 @@ const ProfileSettings = () => {
                 type="email"
                 className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#D83030]"
                 defaultValue="info@rankmantraacademy.com"
+                disabled
               />
             </div>
 
