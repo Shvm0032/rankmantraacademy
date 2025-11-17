@@ -38,13 +38,9 @@ const EmailsTable = ({ emails }) => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span
-                    className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      email.status === "Unread"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-gray-100 text-gray-800"
-                    }`}
+                    className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-500 text-white`}
                   >
-                    {email.status}
+                    Success
                   </span>
                 </td>
               </tr>
