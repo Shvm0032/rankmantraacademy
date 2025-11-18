@@ -7,11 +7,13 @@ import Link from "next/link";
 import dotsDesign from "@/public/headerDotsDesign.png";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import api from "@/utils/api"; // make sure this points to your axios instance
 
 export default function Header() {
   const [showPopUp, setShowPopUp] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showCourses, setShowCourses] = useState(false);
+  const [fetchedCourses, setFetchedCourses] = useState([]);
 
   useEffect(() => {
     if (showPopUp || menuOpen) {
@@ -21,27 +23,29 @@ export default function Header() {
     }
   }, [showPopUp, menuOpen]);
 
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const res = await api.get("/courses");
+        setFetchedCourses(res.data.courses); // fetch dynamic courses
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
   const menuLinks = [
     { name: "HOME", href: "/" },
     { name: "ABOUT", href: "/about" },
     {
       name: "COURSES",
-      dropdown: [
-        {
-          name: "Basic Digital Marketing Course",
-          href: "/course/basic-digital-marketing-course",
-        },
-        {
-          name: "Advance Digital Marketing Course",
-          href: "/course/advance-digital-marketing-course",
-        },
-        {
-          name: "Performance Marketing Course",
-          href: "/course/performance-marketing-course",
-        },
-      ],
+      dropdown: fetchedCourses.map((course) => ({
+        name: course.title,
+        href: `/course/${course.slug}`,
+      })),
     },
-    // { name: "BLOG", href: "/blog" },
     { name: "CONTACT", href: "/contact" },
     { name: "STUDENT REVIEWS", href: "/student-reviews" },
   ];
@@ -101,7 +105,7 @@ export default function Header() {
               </li>
             ))}
 
-            {/* Login Button Added Here */}
+            {/* Login Button */}
             <li>
               <Link
                 href="/student-panel"
