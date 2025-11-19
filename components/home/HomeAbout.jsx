@@ -6,10 +6,10 @@ const HomeAbout = () => {
     return (
         <section className="bg-[#fff9f6] py-8 px-4 md:py-16">
             <div className="flex items-center justify-center flex-col">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4">
+                <h2 className="text-3xl text-center sm:text-4xl font-extrabold text-black mb-4">
                     About RankMantra Academy
                 </h2>
-                <div className="w-[200px] h-[4px] bg-[#D83030] mx-auto lg:mx-0 mb-6"></div>
+                <div className="w-[200px] h-1 bg-[#D83030] mx-auto lg:mx-0 mb-6"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-10">
