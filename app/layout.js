@@ -3,6 +3,7 @@
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CustomLoader from "@/components/layout/CustomLoader";
 import { Toaster } from "react-hot-toast";
 import { usePathname } from "next/navigation";
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-gray-50 text-gray-900">
+          <CustomLoader>
         
         {/* 👇 Admin me Header/Footer hide */}
         {!isAdmin && !isStudentPanel && <Header />}
@@ -27,12 +29,17 @@ export default function RootLayout({ children }) {
               error: { background: "#ffe9e9", color: "#842029" },
             }}
           />
-          
           {children}
+
+
+          
         </main>
+
 
         {/* 👇 Admin me Footer hide */}
         {!isAdmin && !isStudentPanel && <Footer />}
+          </CustomLoader>
+
 
       </body>
     </html>

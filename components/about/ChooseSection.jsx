@@ -10,7 +10,7 @@ export default function ChooseSection({
   return (
     <section className="bg-white w-full border-t px-4 md:px-8 lg:px-16 py-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-stretch gap-6">
+        <div className="flex flex-col-reverse md:flex-row items-stretch gap-6">
           <div className="md:w-1/2 w-full bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
             <Image
               src={imageSrc}

@@ -5,6 +5,7 @@ export default function InfoSection() {
   return (
     <section className="bg-white w-full py-12 px-4 md:px-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        
         {/* LEFT DIV */}
         <div>
           {/* Subheading */}
@@ -17,7 +18,7 @@ export default function InfoSection() {
             Rankmantra Academy
           </h2>
 
-          {/* Paragraph (Width Reduced + Unified) */}
+          {/* Paragraph */}
           <p className="text-gray-700 text-base text-justify mb-8 max-w-[500px]">
             <span className="font-bold">Rank Mantra Academy</span> is dedicated
             to empowering students with industry-relevant digital marketing
@@ -25,9 +26,8 @@ export default function InfoSection() {
             helping learners build successful careers in the digital world.
           </p>
 
-          {/* TEXT ROW 1 */}
+          {/* TEXT ROW 1 - OUR MISSION */}
           <div className="flex gap-4 mb-6">
-            {/* OUR Mission */}
             <div className="min-w-[120px]">
               <h2 className="text-[#D83030] text-5xl font-extrabold leading-none">
                 OUR
@@ -35,22 +35,28 @@ export default function InfoSection() {
               <p className="uppercase text-2xl text-gray-700 font-semibold">
                 Mission
               </p>
+
+              {/* MOBILE ONLY VALUE */}
+              <p className="text-gray-600 text-sm mt-2 md:hidden">
+             To provide high-quality, affordable, and practical digital
+              marketing education that transforms students into industry-ready
+              professionals.
+              </p>
             </div>
 
             {/* Vertical Line */}
-            <span className="h-auto w-px bg-gray-300"></span>
+            <span className="h-auto w-px bg-gray-300 md:block hidden"></span>
 
-            {/* Text with SAME width */}
-            <p className="text-gray-600 text-base text-justify flex-1 max-w-[350px]">
+            {/* Desktop paragraph only */}
+            <p className="text-gray-600 text-base text-justify flex-1 max-w-[350px] hidden md:block">
               To provide high-quality, affordable, and practical digital
               marketing education that transforms students into industry-ready
               professionals.
             </p>
           </div>
 
-          {/* TEXT ROW 2 */}
+          {/* TEXT ROW 2 - OUR VISION */}
           <div className="flex gap-4">
-            {/* OUR Vision */}
             <div className="min-w-[120px]">
               <h2 className="text-[#D83030] text-5xl font-extrabold leading-none">
                 OUR
@@ -58,12 +64,18 @@ export default function InfoSection() {
               <p className="uppercase tracking-widest text-2xl font-semibold text-gray-700">
                 Vision
               </p>
+
+              {/* MOBILE ONLY VALUE */}
+              <p className="text-gray-600 text-sm mt-2 md:hidden">
+              To become the most trusted digital marketing academy, shaping the
+              future of thousands of learners across India.
+              </p>
             </div>
 
-            <span className="h-auto w-px bg-gray-300"></span>
+            <span className="h-auto w-px bg-gray-300 md:block hidden"></span>
 
-            {/* SAME width as above */}
-            <p className="text-gray-600 text-base text-justify flex-1 max-w-[350px]">
+            {/* Desktop paragraph only */}
+            <p className="text-gray-600 text-base text-justify flex-1 max-w-[350px] hidden md:block">
               To become the most trusted digital marketing academy, shaping the
               future of thousands of learners across India.
             </p>
