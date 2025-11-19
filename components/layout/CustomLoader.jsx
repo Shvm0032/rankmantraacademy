@@ -41,11 +41,11 @@ export default function CustomLoader({ children }) {
                 alt="RankMantra Logo"
                 width={130}
                 height={130}
-                className=""
+                className="drop-shadow-xl"
               />
             </motion.div>
 
-            {/* Company Name
+            {/* Company Name */}
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function CustomLoader({ children }) {
               RankMantra Academy
             </motion.h1>
 
-            Tagline
+            {/* Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function CustomLoader({ children }) {
               className="text-gray-600 text-lg mt-2"
             >
               Empowering Skills. Powering Futures.
-            </motion.p> */}
+            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>
