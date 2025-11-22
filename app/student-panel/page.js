@@ -132,14 +132,14 @@ export default function StudentPanel() {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-gray-500 font-medium">+91</span>
+                        <span className="text-gray-700 font-medium">+91</span>
                       </div>
                       <input
                         type="tel"
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
                         placeholder="Enter your 10-digit mobile number"
-                        className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5BFF] focus:border-transparent transition-all duration-200"
+                        className="block text-gray-700 w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5BFF] focus:border-transparent transition-all duration-200"
                         maxLength={10}
                       />
                     </div>
@@ -165,7 +165,7 @@ export default function StudentPanel() {
                       value={otp}
                       onChange={(e) => setOtp(e.target.value)}
                       placeholder="Enter 5-digit OTP"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5BFF] focus:border-transparent transition-all duration-200 text-center text-lg font-semibold"
+                      className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5BFF] focus:border-transparent transition-all duration-200 text-center text-lg font-semibold"
                       maxLength={5}
                     />
                     <p className="text-sm text-gray-500 mt-2 text-center">
@@ -175,7 +175,7 @@ export default function StudentPanel() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#2D5BFF] text-white py-3 rounded-lg font-semibold hover:bg-[#1E40AF] transition-all duration-200 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+                    className="w-full  bg-[#2D5BFF] text- py-3 rounded-lg font-semibold hover:bg-[#1E40AF] transition-all duration-200 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
                   >
                     Verify OTP
                   </button>
@@ -193,7 +193,7 @@ export default function StudentPanel() {
 
               <div className="mt-12 pt-6 border-t border-gray-200">
                 <p className="text-center text-sm text-gray-500">
-                  © 2017-2025 Rankmantra Academy All Rights Reserved.
+                 Copyright © 2025 Rankmantra Academy. All Rights Reserved.
                   <br />
                   Website Designed and Developed by Rank Mantra.
                 </p>

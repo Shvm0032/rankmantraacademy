@@ -1,20 +1,76 @@
-import { BookOpen, FileText, CheckCircle2, Target, Clock, UserPlus, CheckCheck, Users } from "lucide-react";
+import {
+  BookOpen,
+  FileText,
+  Hourglass,
+  Target,
+  LoaderCircle,
+  Calendar,
+  Clock,
+  UserPlus,
+  CheckCheck,
+  Users,
+} from "lucide-react";
+import api from "@/utils/api";
+import { useEffect, useState } from "react";
 
 export default function DashboardContent() {
+  const [course, setCourse] = useState([]);
+
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        const res = await api.get(`/courses`);
+        console.log("data",res.data)
+        setCourse(res.data.courses);
+      } catch (error) {
+        console.log("error fetch the data into the dashboard page", error);
+      }
+    };
+    fetchCourse();
+  }, []);
   const stats = [
     { label: "Total Courses", value: "5", color: "purple", icon: BookOpen },
-    { label: "Pending Assignments", value: "3", color: "orange", icon: FileText },
-    { label: "Completed Courses", value: "2", color: "green", icon: CheckCircle2 },
-    { label: "Average Grade", value: "85%", color: "blue", icon: Target },
+  
+    {
+      label: "Course Duration",
+      value: "2 month",
+      color: "green",
+      icon: Hourglass,
+    },
+    {
+      label: "Course Progress",
+      value: "85%",
+      color: "blue",
+      icon: LoaderCircle,
+    },
+    {
+      label: "Join Date",
+      value: "12/11/2025",
+      color: "red",
+      icon: Calendar,
+    },
   ];
 
-  const recentActivities = [
-    { action: "Submitted Math Assignment", time: "2 hours ago", icon: CheckCheck },
-    { action: "Enrolled in Physics Course", time: "1 day ago", icon: UserPlus },
-    { action: "Received Grade for English", time: "2 days ago", icon: Target },
-    { action: "Joined Study Group", time: "3 days ago", icon: Users },
-  ];
+ 
 
+  const classes = [
+    {
+      topic: "Introduction to React.js",
+      date: "25 Nov 2025",
+      time: "10:00 AM - 11:30 AM",
+    },
+    {
+      topic: "JavaScript Advanced Functions",
+      date: "27 Nov 2025",
+      time: "02:00 PM - 03:30 PM",
+    },
+    {
+      topic: "UI/UX Design Fundamentals",
+      date: "29 Nov 2025",
+      time: "04:00 PM - 05:00 PM",
+    },
+  ];
+  
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
@@ -31,8 +87,10 @@ export default function DashboardContent() {
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm font-medium">{stat.label}</p>
-                <p className={`text-2xl font-bold text-${stat.color}-600 mt-2`}>
+                <p className="text-gray-600 text-sm font-medium">
+                  {stat.label}
+                </p>
+                <p className={`text-xl font-bold text-${stat.color}-600 mt-2`}>
                   {stat.value}
                 </p>
               </div>
@@ -43,48 +101,58 @@ export default function DashboardContent() {
           </div>
         ))}
       </div>
+      {/* Enroll Course */}
+      <div className="w-full bg-gray-50 py-10 px-4">
+        {/* Section Heading */}
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Enroll Courses
+        </h2>
 
-      {/* Recent Activities */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">
-            Recent Activities
-          </h3>
-          <div className="space-y-4">
-            {recentActivities.map((activity, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl"
-              >
-                <activity.icon className="w-5 h-5 text-purple-600" />
-                <div className="flex-1">
-                  <p className="font-medium text-gray-800">{activity.action}</p>
-                  <p className="text-sm text-gray-600">{activity.time}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Course Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+          {course.map((course, index) => (
+            <div
+              key={index}
+              className="bg-[#EFF6FF] p-5 rounded-xl shadow-md border hover:shadow-lg transition-all duration-200"
+            >
+              <h3 className="text-xl font-semibold text-gray-800">
+                {course.title}
+              </h3>
+              <p className="text-gray-600 mt-2 text-sm">{course.description}</p>
+            </div>
+          ))}
         </div>
+      </div>
+      {/* Upcoming classes */}
+      <div className="w-full bg-gray-50 py-10 px-4">
+        {/* Section Heading */}
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Upcoming Classes
+        </h2>
 
-        {/* Upcoming Deadlines */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">
-            Upcoming Deadlines
-          </h3>
-          <div className="space-y-4">
-            <div className="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-xl">
-              <p className="font-medium text-gray-800">Physics Assignment</p>
-              <p className="text-sm text-gray-600">Due: Tomorrow, 11:59 PM</p>
+        {/* Class Cards */}
+        <div className="space-y-5">
+          {classes.map((cls, index) => (
+            <div
+              key={index}
+              className="bg-[#F3E8FF] shadow-md border rounded-xl p-5 hover:shadow-lg transition-all duration-200"
+            >
+              <h3 className="text-lg font-semibold text-gray-800">
+                {cls.topic}
+              </h3>
+
+              <div className="mt-2 text-gray-600 text-sm">
+                <p>
+                  <span className="font-semibold text-gray-700">Date:</span>{" "}
+                  {cls.date}
+                </p>
+                <p>
+                  <span className="font-semibold text-gray-700">Time:</span>{" "}
+                  {cls.time}
+                </p>
+              </div>
             </div>
-            <div className="p-4 border-l-4 border-blue-500 bg-blue-50 rounded-r-xl">
-              <p className="font-medium text-gray-800">Math Quiz</p>
-              <p className="text-sm text-gray-600">Due: In 2 days</p>
-            </div>
-            <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-xl">
-              <p className="font-medium text-gray-800">Project Submission</p>
-              <p className="text-sm text-gray-600">Due: Next week</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
