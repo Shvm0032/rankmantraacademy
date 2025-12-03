@@ -3,7 +3,7 @@ import { useState } from "react";
 import DashboardContent from "./DashboardContent";
 import CoursesContent from "./CoursesContent";
 import AssignmentsContent from "./AssignmentsContent";
-import GradesContent from "./GradesContent";
+import GradesContent from "./Certificate";
 import ProfileContent from "./ProfileContent";
 import SettingsContent from "./SettingsContent";
 import Image from "next/image";
@@ -53,7 +53,7 @@ export default function StudentDashboard({ onLogout }) {
   const closeSidebar = () => setMobileSidebarOpen(false);
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div className="min-h-screen bg-[#032E42] relative">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,7 +168,7 @@ export default function StudentDashboard({ onLogout }) {
         <div className="flex flex-col md:flex-row gap-8">
           {/* SIDEBAR (Desktop Only) */}
           <div className="hidden md:block md:w-64 shrink-0">
-            <div className="bg-white rounded-2xl shadow-sm border p-6">
+            <div className="bg-[#D83030] rounded-2xl shadow-sm border p-6">
               <nav className="space-y-2">
                 {sidebarItems.map((item) => (
                   <button
@@ -176,8 +176,8 @@ export default function StudentDashboard({ onLogout }) {
                     onClick={() => setActiveTab(item.id)}
                     className={`w-full flex items-center hover:cursor-pointer space-x-3 px-4 py-3 rounded-xl text-left transition-all duration-200 ${
                       activeTab === item.id
-                        ? "bg-linear-to-r from-purple-50 to-blue-50 text-purple-700 border border-purple-200"
-                        : "text-gray-600 hover:bg-gray-50"
+                        ? "bg-linear-to-r from-purple-50 to-blue-50  text-[#032E42] border border-purple-200"
+                        : "text-gray-100 hover:bg-[#032E42]"
                     }`}
                   >
                     <item.icon className="w-5 h-5" />
@@ -188,20 +188,20 @@ export default function StudentDashboard({ onLogout }) {
             </div>
 
             {/* QUICK STATS */}
-            <div className="bg-white rounded-2xl shadow-sm border p-6 mt-6">
-              <h3 className="font-bold text-gray-800 mb-4">Quick Stats</h3>
+            <div className="bg-[#D83030] rounded-2xl shadow-sm border p-6 mt-6">
+              <h3 className="font-bold text-gray-100 mb-4">Quick Stats</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Courses</span>
-                  <span className="font-bold text-purple-600">5</span>
+                  <span className="text-gray-100">Courses</span>
+                  <span className="font-bold text-gray-100">5</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Assignments</span>
-                  <span className="font-bold text-blue-600">3</span>
+                  <span className="text-gray-100">Assignments</span>
+                  <span className="font-bold text-gray-100">3</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Avg. Grade</span>
-                  <span className="font-bold text-green-600">85%</span>
+                  <span className="text-gray-100">Avg. Grade</span>
+                  <span className="font-bold text-gray-100">85%</span>
                 </div>
               </div>
             </div>
