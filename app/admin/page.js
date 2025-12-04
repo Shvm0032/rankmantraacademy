@@ -12,7 +12,7 @@ export default function AdminLogin() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (email === "dnd@rankmantra.com" && password === "Priyansh@8748**") {
+    if (email === "admin@123" && password === "admin@123") {
       document.cookie = "admin-auth=true; path=/; max-age=86400";
       window.location.href = "/admin/dashboard";
       toast.success("Login successful!");
